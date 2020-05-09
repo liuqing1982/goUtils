@@ -139,5 +139,6 @@ func setLogConsole(console bool) {
 		src, _ := os.OpenFile(os.DevNull, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 		writer := bufio.NewWriter(src)
 		log.SetOutput(writer)
+		src.Close()
 	}
 }
